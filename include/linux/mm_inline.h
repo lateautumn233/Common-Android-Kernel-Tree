@@ -4,6 +4,10 @@
 
 #include <linux/huge_mm.h>
 #include <linux/swap.h>
+#ifndef __GENKSYMS__
+#define PROTECT_TRACE_INCLUDE_PATH
+#include <trace/hooks/mm.h>
+#endif
 
 /**
  * page_is_file_lru - should the page be on a file LRU or anon LRU?
