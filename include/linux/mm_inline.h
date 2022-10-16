@@ -320,7 +320,6 @@ static __always_inline void del_page_from_lru_list(struct page *page,
 	if (lru_gen_del_page(lruvec, page, false))
 		return;
 
-	trace_android_vh_del_page_from_lrulist(page, false, lru);
 	list_del(&page->lru);
 	update_lru_size(lruvec, page_lru(page), page_zonenum(page),
 			-thp_nr_pages(page));
